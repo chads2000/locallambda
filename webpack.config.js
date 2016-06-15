@@ -14,7 +14,8 @@ const common = {
   // We'll be using the latter form given it's
   // convenient with more complex configurations.
   entry: {
-    app: PATHS.app
+    app: PATHS.app,
+    bootstrap: 'bootstrap-loader'
   },
   output: {
     path: PATHS.build,

@@ -44,6 +44,24 @@ exports.setupCSS = function(paths) {
           test: /\.css$/,
           loaders: ['style', 'css'],
           include: paths
+        },
+        {
+          test: /\.scss$/,
+          loaders: [ 'style', 'css', 'postcss', 'sass' ]
+        },
+        {
+          // ASSET LOADER
+          // Reference: https://github.com/webpack/file-loader
+          // Copy png, jpg, jpeg, gif, svg, woff, woff2, ttf, eot files to output
+          // Rename the file using the asset hash
+          // Pass along the updated reference to your code
+          // You can add here any file extension you want to get copied to your output
+          test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
+          loader: 'file'
+        },
+        // Bootstrap 4
+        { test: /bootstrap\/dist\/js\/umd\//,
+          loader: 'imports?jQuery=jquery'
         }
       ]
     }

@@ -7,6 +7,17 @@ var docClient = new AWS.DynamoDB.DocumentClient({
   secretAccessKey:"accessKeyId",
   sessionToken:"random"
 });
+if (process.env.NODE_ENV=="production") {
+  var docClient = new AWS.DynamoDB.DocumentClient();
+} else {
+  var docClient = new AWS.DynamoDB.DocumentClient({
+    region:"us-east-1",
+    endpoint: "http://localhost:9000",
+    accessKeyId:"accessKeyId",
+    secretAccessKey:"accessKeyId",
+    sessionToken:"random"
+  });
+}
 /**
  * Provide an event that contains the following keys:
  *
