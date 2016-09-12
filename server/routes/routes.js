@@ -1,6 +1,6 @@
 var projects;
-var lambda = require('../../lambdaDynamo/index.js');
-var event = require('../../lambdaDynamo/event.json');
+var lambda = require('../../lambda/index.js');
+var event = require('../../lambda/event.json');
 var contextObj = function(resolve){
   var res = resolve;
   this.succeed = function(data){

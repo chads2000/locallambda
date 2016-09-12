@@ -1,7 +1,0 @@
-{
-  "tableName": "local.aws.dynamo",
-  "operation": "list",
-  "payload": {
-        "TableName": "local.aws.dynamo"
-  }
-}
